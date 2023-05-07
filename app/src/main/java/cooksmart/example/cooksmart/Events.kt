@@ -49,7 +49,7 @@ class Events : Fragment() {
 
         val builder = AlertDialog.Builder(requireContext())
         builder.setTitle("Do you want to register this event?")
-        builder.setMessage("you will get dl for this event")
+        builder.setMessage("you will get score for this")
         builder.setIcon(R.drawable.ic_info)
 
         builder.setPositiveButton("Yes") { dialogInterface, which ->

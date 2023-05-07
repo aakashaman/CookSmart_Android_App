@@ -16,22 +16,7 @@ class Account : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?  ): View? {
 
         v = inflater.inflate(R.layout.fragment_account,container,false)
-/*
-        var user1 = JSONObject();
-        user1.put("reg", 12345672);
-        user1.put("password", "123456");
-        user1.put("name", "pankaj");
-        user1.put("dl",5);
-        user1.put("total_classes",50);
-        user1.put("attended_classes",35);
 
-        val jsonString = user1.toString()
-        val sharedPreferences = requireContext().getSharedPreferences("userRefs", Context.MODE_PRIVATE)
-
-        val editor = sharedPreferences.edit()
-        editor.putString("userData", jsonString)
-        editor.apply()
-       */
         val sharedPreferences = requireContext().getSharedPreferences("userRefs", Context.MODE_PRIVATE)
 
         var dl=0
