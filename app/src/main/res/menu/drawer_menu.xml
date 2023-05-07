@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <item
+        android:id="@+id/menu_history"
+        android:title="Recipes Home"
+        android:icon="@drawable/ic_food"
+        />
+
+
+    <item
+        android:id="@+id/menu_events"
+        android:title="Events"
+        android:icon="@drawable/ic_events"
+        />
+
+    <item
+        android:id="@+id/menu_home"
+        android:title="Account"
+        android:icon="@drawable/ic_home"
+        />
+
+
+
+
+
+
+
+
+    <item
+        android:id="@+id/menu_logout"
+        android:title="Logout"
+        android:icon="@drawable/ic_logout"
+        />
+</menu>

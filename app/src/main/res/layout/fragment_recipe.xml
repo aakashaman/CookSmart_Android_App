@@ -1,0 +1,944 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/des1"
+    tools:context="cooksmart.example.cooksmart.recipe">
+
+    <TimePicker
+        android:id="@+id/timePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+<!--    adding a fragment for details container-->
+
+        <LinearLayout
+            android:id="@+id/Fragment_Container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="3dp"
+            android:orientation="vertical"
+            android:visibility="gone"
+
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                >
+
+                <Button
+                    android:id="@+id/backbutton"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@drawable/baseline_arrow_back_24" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="2dp"
+                    android:text="DETAILS"
+                    android:textAlignment="viewEnd"
+                    android:textSize="23dp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                >
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/fragment_container"
+                    android:name="cooksmart.example.cooksmart.MyFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/shadow_background"
+                    />
+            </ScrollView>
+
+        </LinearLayout>
+
+        <!--    code for writing the upper most container container history heading and search by date button-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/container1"
+
+
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1"
+                android:paddingLeft="6dp"
+                android:text="RECIPES"
+                android:textSize="23dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/datepicker"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/date_pick"
+                android:backgroundTint="@color/black"
+                />
+        </LinearLayout>
+
+        <!--    code for making first event container -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/container2"
+            android:layout_below="@+id/container1"
+            >
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:scrollbars="none"
+                >
+
+                <!--    creating the event container 1 so that I can scroll it inside the scroll bar  -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/event1maincontainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:background="@drawable/shadow_background"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/innercontainer1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+
+                            >
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <ImageView
+                                    android:id="@+id/event1image"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="174dp"
+                                    android:src="@drawable/pizza" />
+
+                                <TextView
+                                    android:id="@+id/event1author"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/event1image"
+                                    android:layout_marginTop="2dp"
+                                    android:padding="2dp"
+                                    android:text="PIZZA RECIPE"
+                                    android:textAlignment="center"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:id="@+id/event1Name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="2dp"
+                                    android:text=""
+                                    android:textAlignment="center"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/event1Description"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/event1Name"
+                                    android:justificationMode="inter_word"
+                                    android:padding="2dp"
+                                    android:text=" "
+                                    android:textAlignment="center" />
+
+                                <TextView
+                                    android:id="@+id/event1DateTime"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/event1Description"
+                                    android:layout_marginTop="3dp"
+                                    android:padding="2dp"
+                                    android:text=""
+                                    android:textAlignment="center"
+                                    android:textStyle="bold" />
+
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <HorizontalScrollView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="8dp"
+                                android:scrollbars="none">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+
+                                    android:orientation="horizontal">
+
+
+
+
+
+                                    <Button
+                                        android:id="@+id/details"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:backgroundTint="#83000000"
+                                        android:text="Details" />
+
+                                    <Button
+                                        android:id="@+id/setalarm1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:onClick="showTimePicker"
+                                        android:backgroundTint="#83000000"
+                                        android:text="Set Alarm" />
+
+                                </LinearLayout>
+
+                            </HorizontalScrollView>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- creating the event 2 container so that we can scroll later on -->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:orientation="vertical"
+                        android:layout_below="@+id/event1maincontainer"
+                        android:id="@+id/event2maincontainer"
+                        android:background="@drawable/shadow_background"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/innercontainer2"
+                            android:orientation="horizontal"
+
+                            >
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                >
+
+                                <ImageView
+                                    android:id="@+id/event2image"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="174dp"
+                                    android:src="@drawable/burger" />
+
+                                <TextView
+                                    android:id="@+id/event2author"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/event2image"
+                                    android:padding="2dp"
+                                    android:text="BURGER RECIPE"
+                                    android:textAlignment="center"
+                                    android:layout_marginTop="2dp"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                >
+
+                                <TextView
+                                    android:id="@+id/event2Name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="2dp"
+                                    android:text=""
+                                    android:textAlignment="center"
+                                    android:textStyle="bold" />
+
+                                <ScrollView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="125dp"
+                                    android:id="@+id/event2container"
+                                    android:layout_below="@+id/event2Name"
+                                    android:scrollbars="none"
+                                    >
+                                    <TextView
+                                        android:id="@+id/event2Description"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:justificationMode="inter_word"
+                                        android:textAlignment="center"
+                                        android:padding="2dp"
+                                        android:text=" "
+                                        />
+                                </ScrollView>
+
+                                <TextView
+                                    android:id="@+id/event2DateTime"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/event2container"
+                                    android:layout_marginTop="3dp"
+                                    android:padding="2dp"
+                                    android:text=""
+                                    android:textAlignment="center"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            >
+                            <HorizontalScrollView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scrollbars="none"
+                                android:layout_marginTop="8dp"
+                                >
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal" >
+
+
+
+                                    <Button
+                                        android:id="@+id/details2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:backgroundTint="#83000000"
+                                        android:text="Details" />
+
+                                    <Button
+                                        android:id="@+id/setalarm2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:onClick="showTimePicker"
+                                        android:backgroundTint="#83000000"
+                                        android:text="Set Alarm" />
+
+                                </LinearLayout>
+
+                            </HorizontalScrollView>
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <!-- creating the event 3 contaier so that we can scroll later on -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:orientation="vertical"
+                        android:layout_below="@+id/event2maincontainer"
+                        android:id="@+id/event3maincontainer"
+                        android:background="@drawable/shadow_background"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/innercontainer3"
+                            android:orientation="horizontal"
+
+                            >
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                >
+
+                                <ImageView
+                                    android:id="@+id/event3image"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="173dp"
+                                    android:src="@drawable/biryani" />
+
+                                <TextView
+                                    android:id="@+id/event3author"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/event3image"
+                                    android:layout_marginTop="2dp"
+                                    android:padding="2dp"
+                                    android:text="BIRYANI"
+                                    android:textAlignment="center"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                >
+
+                                <TextView
+                                    android:id="@+id/event3Name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="2dp"
+                                    android:text=""
+                                    android:textAlignment="center"
+                                    android:textStyle="bold" />
+
+                                <ScrollView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="125dp"
+                                    android:id="@+id/event3container"
+                                    android:layout_below="@+id/event3Name"
+                                    android:scrollbars="none"
+                                    >
+                                    <TextView
+                                        android:id="@+id/event3Description"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:justificationMode="inter_word"
+                                        android:textAlignment="center"
+                                        android:padding="2dp"
+                                        android:text=" "
+                                        />
+                                </ScrollView>
+
+                                <TextView
+                                    android:id="@+id/event3DateTime"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/event3container"
+                                    android:layout_marginTop="3dp"
+                                    android:padding="2dp"
+                                    android:text=""
+                                    android:textAlignment="center"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            >
+                            <HorizontalScrollView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scrollbars="none"
+                                android:layout_marginTop="8dp"
+                                >
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal" >
+
+                                    \
+
+                                    <Button
+                                        android:id="@+id/details3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:backgroundTint="#83000000"
+                                        android:text="Details" />
+
+                                    <Button
+                                        android:id="@+id/setalarm3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:backgroundTint="#83000000"
+                                        android:onClick="showTimePicker"
+                                        android:text="Set Alarm" />
+
+                                </LinearLayout>
+
+                            </HorizontalScrollView>
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <!-- creating the event 4 contaier so that we can scroll later on -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:orientation="vertical"
+                        android:layout_below="@+id/event3maincontainer"
+                        android:id="@+id/event4maincontainer"
+                        android:background="@drawable/shadow_background"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/innercontainer4"
+                            android:orientation="horizontal"
+
+                            >
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                >
+
+                                <ImageView
+                                    android:id="@+id/event4image"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="174dp"
+                                    android:src="@drawable/rasagulla" />
+
+                                <TextView
+                                    android:id="@+id/event4author"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/event4image"
+                                    android:layout_marginTop="2dp"
+                                    android:padding="2dp"
+                                    android:text="RASAGULLA RECIPE"
+                                    android:textAlignment="center"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                >
+
+                                <TextView
+                                    android:id="@+id/event4Name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="2dp"
+                                    android:text=""
+                                    android:textAlignment="center"
+                                    android:textStyle="bold" />
+
+                                <ScrollView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="125dp"
+                                    android:id="@+id/event4container"
+                                    android:layout_below="@+id/event4Name"
+                                    android:scrollbars="none"
+                                    >
+                                    <TextView
+                                        android:id="@+id/event4Description"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:justificationMode="inter_word"
+                                        android:textAlignment="center"
+                                        android:padding="2dp"
+                                        android:text=" "
+                                        />
+                                </ScrollView>
+
+                                <TextView
+                                    android:id="@+id/event4DateTime"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/event4container"
+                                    android:layout_marginTop="3dp"
+                                    android:padding="2dp"
+                                    android:text=""
+                                    android:textAlignment="center"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            >
+                            <HorizontalScrollView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scrollbars="none"
+                                android:layout_marginTop="8dp"
+                                >
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal" >
+
+                                    \
+
+                                    <Button
+                                        android:id="@+id/details4"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:backgroundTint="#83000000"
+                                        android:text="Details" />
+
+                                    <Button
+                                        android:id="@+id/setalarm4"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:backgroundTint="#83000000"
+                                        android:onClick="showTimePicker"
+                                        android:text="Set Alarm" />
+
+                                </LinearLayout>
+
+                            </HorizontalScrollView>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- creating the event 5 contaier so that we can scroll later on -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:orientation="vertical"
+                        android:layout_below="@+id/event4maincontainer"
+                        android:id="@+id/event5maincontainer"
+                        android:background="@drawable/shadow_background"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/innercontainer5"
+                            android:orientation="horizontal"
+
+                            >
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                >
+
+                                <ImageView
+                                    android:id="@+id/event5image"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="170dp"
+                                    android:src="@drawable/pasta" />
+
+                                <TextView
+                                    android:id="@+id/event5author"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/event5image"
+                                    android:padding="2dp"
+                                    android:text="PASTA RECIPE"
+                                    android:textAlignment="center"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                >
+
+                                <TextView
+                                    android:id="@+id/event5Name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="2dp"
+                                    android:text=""
+                                    android:textAlignment="center"
+                                    android:textStyle="bold" />
+
+                                <ScrollView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="125dp"
+                                    android:id="@+id/event5container"
+                                    android:layout_below="@+id/event5Name"
+                                    android:scrollbars="none"
+                                    >
+                                    <TextView
+                                        android:id="@+id/event5Description"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:justificationMode="inter_word"
+                                        android:textAlignment="center"
+                                        android:padding="2dp"
+                                        android:text=" "
+                                        />
+                                </ScrollView>
+
+                                <TextView
+                                    android:id="@+id/event5DateTime"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/event5container"
+                                    android:layout_marginTop="3dp"
+                                    android:padding="2dp"
+                                    android:text=""
+                                    android:textAlignment="center"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            >
+                            <HorizontalScrollView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scrollbars="none"
+                                android:layout_marginTop="8dp"
+                                >
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal" >
+
+
+
+                                    <Button
+                                        android:id="@+id/details5"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:backgroundTint="#83000000"
+                                        android:text="Details" />
+
+                                    <Button
+                                        android:id="@+id/setalarm5"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:onClick="showTimePicker"
+                                        android:backgroundTint="#83000000"
+                                        android:text="Set Alarm" />
+
+                                </LinearLayout>
+
+                            </HorizontalScrollView>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- creating the event 6 contaier so that we can scroll later on -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:orientation="vertical"
+                        android:layout_below="@+id/event5maincontainer"
+                        android:id="@+id/event6maincontainer"
+                        android:background="@drawable/shadow_background"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/innercontainer6"
+                            android:orientation="horizontal"
+
+                            >
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                >
+
+                                <ImageView
+                                    android:id="@+id/event6image"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="174dp"
+                                    android:src="@drawable/sandesh" />
+
+                                <TextView
+                                    android:id="@+id/event6author"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/event6image"
+                                    android:padding="2dp"
+                                    android:text="SANDESH RECIPE"
+                                    android:textAlignment="center"
+                                    android:layout_marginTop="2dp"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                >
+
+                                <TextView
+                                    android:id="@+id/event6Name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="2dp"
+                                    android:text=""
+                                    android:textAlignment="center"
+                                    android:textStyle="bold" />
+
+                                <ScrollView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="125dp"
+                                    android:id="@+id/event6container"
+                                    android:layout_below="@+id/event6Name"
+                                    android:scrollbars="none"
+                                    >
+                                    <TextView
+                                        android:id="@+id/event6Description"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:justificationMode="inter_word"
+                                        android:textAlignment="center"
+                                        android:padding="2dp"
+                                        android:text=" "
+                                        />
+                                </ScrollView>
+
+                                <TextView
+                                    android:id="@+id/event6DateTime"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/event6container"
+                                    android:layout_marginTop="3dp"
+                                    android:padding="2dp"
+                                    android:text=""
+                                    android:textAlignment="center"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            >
+                            <HorizontalScrollView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scrollbars="none"
+                                android:layout_marginTop="8dp"
+                                >
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal" >
+
+
+
+                                    <Button
+                                        android:id="@+id/details6"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:backgroundTint="#83000000"
+                                        android:text="Details" />
+
+                                    <Button
+                                        android:id="@+id/setalarm6"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:onClick="showTimePicker"
+                                        android:backgroundTint="#83000000"
+                                        android:text="Set Alarm" />
+
+                                </LinearLayout>
+
+                            </HorizontalScrollView>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/show_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="Show All"
+                        android:visibility="gone"
+                        android:backgroundTint="#83000000"
+                        android:layout_marginTop="4dp"
+                        android:layout_below="@+id/event6maincontainer"
+                        />
+
+                </RelativeLayout>
+            </ScrollView>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</FrameLayout>
